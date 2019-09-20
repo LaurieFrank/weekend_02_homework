@@ -11,8 +11,15 @@ class Rooms
   end
 
   def add_guest(new_guest)
-    @room.push(new_guest).length
+    if @capacity >= 1
+      return @room.push(new_guest).length
+      end
   end
+
+  # def reduce_capactity(guest)
+  #
+  #   @capacity -= 1
+  # end
 
 
 end
