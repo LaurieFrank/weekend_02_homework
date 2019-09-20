@@ -7,3 +7,4 @@ class Guests
     @wallet = wallet_value
     @fav_song = []
   end
+end

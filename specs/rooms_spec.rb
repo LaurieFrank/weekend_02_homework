@@ -7,9 +7,13 @@ require_relative("../rooms")
 class RoomsTest < MiniTest::Test
 
   def setup
+    @room1 = Rooms.new("Sodor", 50, 3)
+    @room2 = Rooms.new("Station", 60, 2)
+
     @guest1 = Guests.new("Thomas", 100)
     @guest2 = Guests.new("Henrietta", 200)
     @guest3 = Guests.new("Gordon", 350)
+    @guests = [@guest1, @guest2, @guest3]
 
     @song1 = Songs.new("Tunnel of Love", "Dire Straits")
     @song2 = Songs.new("Capable of Anything", "Ben Folds")
@@ -17,4 +21,21 @@ class RoomsTest < MiniTest::Test
     @songs = [@song1, @song2, @song3]
   end
 
+  def test_room_has_name()
+      assert_equal("Sodor", @room1.name())
+  end
+
+  def test_room_price()
+    assert_equal(60, @room2.price())
+  end
+
+  def test_room_capacity()
+    assert_equal(3, @room1.capacity())
+  end
 end
+
+#test room starts empty of Guests
+#rom can add Guests
+#room can remove Guests
+#test room starts empty of Songs
+#test you can add test_song_has_artist

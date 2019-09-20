@@ -15,5 +15,12 @@ class GuestsTest < MiniTest::Test
     @song3 = Songs.new("Bohemian Rhapsody", "Queen")
     @songs = [@song1, @song2, @song3]
   end
-  
+
+  def test_guest_has_name()
+    assert_equal("Thomas", @guest1.name())
+  end
+
+  def test_amount_in_wallet()
+    assert_equal(350, @guest3.wallet)
+  end
 end
