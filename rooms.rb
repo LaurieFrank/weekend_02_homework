@@ -21,5 +21,11 @@ class Rooms
   #   @capacity -= 1
   # end
 
+  # def remove_guest(guest)
+  #   @room.shift(guest).length
+  # end
 
+  def add_song(new_song)
+    @songs_playing.push(new_song)
+  end
 end
