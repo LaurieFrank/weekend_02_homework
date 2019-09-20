@@ -7,5 +7,12 @@ class Rooms
     @price = room_price
     @capacity = room_capacity
     @songs_playing = []
+    @room = []
   end
+
+  def add_guest(new_guest)
+    @room.push(new_guest).length
+  end
+
+
 end

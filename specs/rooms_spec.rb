@@ -32,6 +32,11 @@ class RoomsTest < MiniTest::Test
   def test_room_capacity()
     assert_equal(3, @room1.capacity())
   end
+
+  def test_add_guest_to_room()
+    new_guest = @room1.add_guest(@guest1)
+    assert_equal(1, new_guest)
+  end
 end
 
 #test room starts empty of Guests
