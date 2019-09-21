@@ -35,14 +35,25 @@ class RoomsTest < MiniTest::Test
 
   def test_add_guest_to_room()
     new_guest = @room1.add_guest(@guest1)
+    
     assert_equal(1, new_guest)
   end
 
-  # def test_remove_guest_from_room()
-  #   guest = @room1.remove_guest(@guest1)
-  #   assert_equal(0, guest)
-  # end
+  def test_remove_guest_from_room()
+    @room1.add_guest(@guest1.name)
+    @room1.add_guest(@guest2.name)
+    guest = @room1.remove_guest(@guest1.name)
+    assert_equal(0, guest)
+    p @rooms
+    #need capactiy somewhere?
+  end
 
+  # def test_bear_can_take_fish_from_river
+  #     @bear.take_fish_from_river(@river)
+  #     assert_equal(1, @bear.food_count)
+  #     assert_equal(2, @river.number_of_fishes)
+  #   end
+  #
     def test_add_songs_to_room()
       song_playing = @room1.add_song(@song2.name)
       assert_equal(["Capable of Anything"], song_playing)
@@ -51,7 +62,6 @@ class RoomsTest < MiniTest::Test
 end
 
 #test room starts empty of Guests
-#rom can add Guests
 #room can remove Guests
 #test room starts empty of Songs
 #test you can add test_song_has_artist
