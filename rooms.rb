@@ -13,9 +13,25 @@ class Rooms
   def add_guest(new_guest)
     if @capacity >= 1
       # return @rooms.push(new_guest).length
-      return @rooms.push(new_guest).size
-      end
+    r@rooms.push(new_guest).size
+    end
   end
+
+  def remove_guest(guest)
+    @rooms.shift(guest).size
+  end
+  #this works to add with .push but when replaced with .delete or .shift
+  #it doesn't?
+
+  # def remove_guest(guest)
+  #   for guest in @guests
+  #     if guest.name = @guest1.name
+  #       return guest.delete
+  #     end
+  #   end
+  # end
+
+#could remove guest by index position. possible with .each
 
 #   def remove_guest(guest)
 #       # return @rooms.push(new_guest).length
@@ -35,11 +51,7 @@ class Rooms
   #   person = room.get_fish()
   #   @food << fish if !fish.nil?
   # end
-  #
-  # def take_fish_from_river(river)
-  #   fish = river.get_fish()
-  #   @food << fish if !fish.nil?
-  # end
+
 
   def add_song(new_song)
     @songs_playing.push(new_song)
